@@ -13,5 +13,3 @@ Test project for easybroker interview process - will update as project evolves
 * Services (job queues, cache servers, search engines, etc.)
 
 * Deployment instructions
-
-* 

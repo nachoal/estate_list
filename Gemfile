@@ -64,8 +64,10 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Extra gems (installed after rails new)
-
 gem 'nokogiri'
 gem 'bootstrap'
 gem 'jquery-rails'
 gem 'kaminari'
+gem 'sidekiq'
+gem 'sidekiq-failures'
+gem 'devise'

@@ -1,0 +1,53 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  property_type: MyString
+  url: MyString
+  title: MyString
+  content: MyString
+  type: 
+  agency: MyString
+  price: one
+  floor_area: one
+  rooms: 
+  bathrooms: 
+  parking: 
+  city: MyString
+  city_area: MyString
+  region: MyString
+  longitude: MyString
+  latitude: MyString
+  address: MyString
+  photo: one
+  eb_id: MyString
+  eb_date: MyString
+  eb_time: MyString
+  floor_number: 
+  eb_year: MyString
+  is_new: false
+
+two:
+  property_type: MyString
+  url: MyString
+  title: MyString
+  content: MyString
+  type: 
+  agency: MyString
+  price: two
+  floor_area: two
+  rooms: 
+  bathrooms: 
+  parking: 
+  city: MyString
+  city_area: MyString
+  region: MyString
+  longitude: MyString
+  latitude: MyString
+  address: MyString
+  photo: two
+  eb_id: MyString
+  eb_date: MyString
+  eb_time: MyString
+  floor_number: 
+  eb_year: MyString
+  is_new: false

@@ -1,8 +1,20 @@
-<h1>Properties</h1>
-<ul>
-  <% @properties.each do |property|  %>
-
-    <li> <%= property.content %></li>
-
-  <% end %>
-</ul>
+<div class="container-fluid">
+  <h1>All of our properties</h1>
+</div>
+<div class="row">
+    <% @properties.each do |property| %>
+      <div class="col-sm-12 col-md-12">
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/shanghai');">
+          <div class="card-category">
+            Popular
+          </div>
+          <div class="card-description">
+            <h2><%= property.title %></h2>
+            <p><%= property.id %></p>
+          </div>
+          <a class="card-link" href="#" ></a>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <%= paginate @properties %>

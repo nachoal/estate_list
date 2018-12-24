@@ -1,0 +1,19 @@
+<% @properties.each do |property| %>
+  <div class="col-sm-12 col-md-12">
+    <div class="flex-card">
+      <div class="card-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= property.photos.empty? ? 'https://kitt.lewagon.com/placeholder/cities/shanghai' : cl_image_path(property.photos.first.photo) %>'); border-top-left-radius: 5px; border-bottom-left-radius: 5px">
+      </div>
+      <div class="card-details">
+        <h2><%= property.title %> | <%= property.property_type %></h2>
+        <h4>Rooms: <%= property.rooms %> </h4>
+        <h4>Bathrooms: <%= property.bathrooms %></h4>
+        <h4>Parking: <%= property.parking %></h4>
+      </div>
+      <div class="card-price">
+        <h4><%= property.currency %> <%= number_with_delimiter(property.price, delimiter: ',') %></h4>
+        <h6><%= property.eb_type %></h6>
+        <%= link_to "View", property_path(property), class: "btn btn-info" %>
+      </div>
+    </div>
+  </div>
+<% end %>

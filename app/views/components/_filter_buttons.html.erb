@@ -1,0 +1,3 @@
+  <h1><%= params[:query].present? ? "#{params[:query]}" : 'Our properties'%></h1>
+  <%= link_to "For Rent", root_path(query: 'For Rent'), class: "btn btn-warning" %>
+  <%= link_to("For Sale", root_path(query: 'For Sale'), class: "btn btn-warning") %>

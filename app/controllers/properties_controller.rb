@@ -6,4 +6,8 @@ class PropertiesController < ApplicationController
       @properties = Property.where(published: true).order(:id).page params[:page]
     end
   end
+
+  def show
+    @property = Property.find(params[:id])
+  end
 end

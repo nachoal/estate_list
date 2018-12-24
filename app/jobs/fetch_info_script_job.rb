@@ -3,20 +3,46 @@
 class FetchInfoScriptJob < ApplicationJob
   queue_as :default
 
-  def perform
-    puts 'Creating Properties...'
-    doc = File.open('trovit_MX.xml') { |f| Nokogiri::XML(f) }
+  def assign_property
+    property = if Property.find_by('eb_id = ?', ad.at('id').content).nil?
+                 Property.new
+               else
+                Property.find_by('eb_id = ?', ad.at('id').content)
+               end
+    property
+  end
 
+  def perform
+    puts 'Opening XML file...'
+    doc = File.open('trovit_MX.xml') { |f| Nokogiri::XML(f) }
+    puts 'Creating Properties'
     Property.all.each do |p|
       p.update(published: false) unless doc.xpath("//id = '#{p.eb_id}'")
     end
 
     doc.xpath('//ad').each do |ad|
-      property = if Property.find_by('eb_id = ?', ad.at('id').content).nil?
-                   Property.new
-                 else
-                   Property.find_by('eb_id = ?', ad.at('id').content)
-                 end
+      property = assign_property
+      if ad.at('pictures').nil?
+        p "This property doesn't have pictures"
+      else
+        ad.at('pictures').children.each do |picture|
+          url = picture.content
+          p 'Checking url validity...'
+          begin
+            test = open(url)
+          rescue OpenURI::HTTPError => e
+            p e
+          end
+          if test.nil?
+            next
+          else
+            p 'Saving valid url photo...'
+            photo = property.photos.new
+            photo.remote_photo_url = url
+            photo.save
+          end
+        end
+      end
       property.address = ad.at('address').nil? ? nil : ad.at('address').content
       property.agency = ad.at('agency').nil? ? nil : ad.at('agency').content
       property.bathrooms = ad.at('bathrooms').nil? ? nil : ad.at('bathrooms').content

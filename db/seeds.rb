@@ -93,5 +93,5 @@ doc.xpath('//ad').each do |ad|
     property.url = ad.at('url').nil? ? nil : ad.at('url').content
     property.published = true
     property.save
-  end 
+  end
 end

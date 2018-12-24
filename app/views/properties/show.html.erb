@@ -1,0 +1,15 @@
+<div class="banner banner-half-page" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.2) 0%, rgba(0,36,61,0.2) 50%), url(<%= @property.photos.first.nil? ? "https://images.unsplash.com/photo-1523527927236-da4036f4f66b" : cloudinary_url(@property.photos.first.photo) %>); background-position: center;">
+<h2><%= @property.title %></h2>
+</div>
+<div class="container">
+  <h4>City: <%= @property.city %></h4>
+  <h4>Type: <%= @property.eb_type %></h4>
+  <h4>Area: <%= @property.city_area %></h4>
+  <h4>Region: <%= @property.region %></h4>
+  <h4>Address: <%= @property.address.nil? ? "Not specified" : @property.address.empty? %></h4>
+  <h4>Agency: <%= @property.agency %></h4>
+  <h5>Rooms: <%= @property.rooms %></h5>
+  <h5>Bathrooms: <%= @property.bathrooms %></h5>
+  <h5>Parking: <%= @property.parking %></h5>
+  <p><%= @property.content %></p>
+</div>

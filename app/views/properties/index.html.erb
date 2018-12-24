@@ -1,8 +1,8 @@
 <div class="container-fluid">
   <h1><%= params[:query].present? ? "#{params[:query]}" : 'Our properties'%></h1>
+  <%= link_to "For Rent", root_path(query: 'For Rent'), class: "btn btn-warning" %>
+  <%= link_to("For Sale", root_path(query: 'For Sale'), class: "btn btn-warning") %>
 </div>
-<%= link_to("For Rent", root_path(query: 'For Rent')) %>
-<%= link_to("For Sale", root_path(query: 'For Sale')) %>
 <div class="row">
   <% @properties.each do |property| %>
     <div class="col-sm-12 col-md-12">
@@ -10,14 +10,14 @@
         <div class="card-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= property.photos.empty? ? 'https://kitt.lewagon.com/placeholder/cities/shanghai' : cl_image_path(property.photos.first.photo) %>'); border-top-left-radius: 5px; border-bottom-left-radius: 5px">
         </div>
         <div class="card-details">
-          <h2><%= property.title %></h2>
+          <h2><%= property.title %> | <%= property.property_type %></h2>
           <h4>Rooms: <%= property.rooms %> </h4>
           <h4>Bathrooms: <%= property.bathrooms %></h4>
           <h4>Parking: <%= property.parking %></h4>
         </div>
         <div class="card-price">
-          <h3><%= property.property_type %></h3>
           <h4><%= property.currency %> <%= number_with_delimiter(property.price, delimiter: ',') %></h4>
+          <h6><%= property.eb_type %></h6>
         </div>
       </div>
     </div>

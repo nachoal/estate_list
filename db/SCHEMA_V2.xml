@@ -1,0 +1,490 @@
+bplist00�XUTI-Data�_$com.apple.traditional-mac-plain-text_public.utf8-plain-text_public.utf16-plain-textO�<?xml version="1.0" encoding="utf-8" ?>
+<!-- SQL XML created by WWW SQL Designer, https://github.com/ondras/wwwsqldesigner/ -->
+<!-- Active URL: https://kitt.lewagon.com/db/672 -->
+<sql>
+<datatypes db="postgresql">
+  <group label="Numeric" color="rgb(238,238,170)">
+    <type label="Integer" length="0" sql="INTEGER" re="INT" quote=""/>
+    <type label="Small Integer" length="0" sql="SMALLINT" quote=""/>
+    <type label="Big Integer" length="0" sql="BIGINT" quote=""/>
+    <type label="Decimal" length="1" sql="DECIMAL" re="numeric" quote=""/>
+    <type label="Serial" length="0" sql="SERIAL" re="SERIAL4" fk="Integer" quote=""/>
+    <type label="Big Serial" length="0" sql="BIGSERIAL" re="SERIAL8" fk="Big Integer" quote=""/>
+    <type label="Real" length="0" sql="BIGINT" quote=""/>
+    <type label="Single precision" length="0" sql="FLOAT" quote=""/>
+    <type label="Double precision" length="0" sql="DOUBLE" re="DOUBLE" quote=""/>
+  </group>
+
+  <group label="Character" color="rgb(255,200,200)">
+    <type label="Char" length="1" sql="CHAR" quote="'"/>
+    <type label="Varchar" length="1" sql="VARCHAR" re="CHARACTER VARYING" quote="'"/>
+    <type label="Text" length="0" sql="TEXT" quote="'"/>
+    <type label="Binary" length="1" sql="BYTEA" quote="'"/>
+    <type label="Boolean" length="0" sql="BOOLEAN" quote="'"/>
+  </group>
+
+  <group label="Date &amp; Time" color="rgb(200,255,200)">
+    <type label="Date" length="0" sql="DATE" quote="'"/>
+    <type label="Time" length="1" sql="TIME" quote="'"/>
+    <type label="Time w/ TZ" length="0" sql="TIME WITH TIME ZONE" quote="'"/>
+    <type label="Interval" length="1" sql="INTERVAL" quote="'"/>
+    <type label="Timestamp" length="1" sql="TIMESTAMP" quote="'"/>
+    <type label="Timestamp w/ TZ" length="0" sql="TIMESTAMP WITH TIME ZONE" quote="'"/>
+    <type label="Timestamp wo/ TZ" length="0" sql="TIMESTAMP WITHOUT TIME ZONE" quote="'"/>
+  </group>
+
+  <group label="Miscellaneous" color="rgb(200,200,255)">
+    <type label="XML" length="1" sql="XML" quote="'"/>
+    <type label="Bit" length="1" sql="BIT" quote="'"/>
+    <type label="Bit Varying" length="1" sql="VARBIT" re="BIT VARYING" quote="'"/>
+    <type label="Inet Host Addr" length="0" sql="INET" quote="'"/>
+    <type label="Inet CIDR Addr" length="0" sql="CIDR" quote="'"/>
+    <type label="Geometry" length="0" sql="GEOMETRY" quote="'"/>
+  </group>
+</datatypes><table x="51" y="106" name="properties">
+<row name="id" null="1" autoincrement="1">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="property_type" null="1" autoincrement="0">
+<datatype>VARCHAR</datatype>
+<default>NULL</default></row>
+<row name="url" null="1" autoincrement="0">
+<datatype>VARCHAR</datatype>
+<default>NULL</default></row>
+<row name="title" null="1" autoincrement="0">
+<datatype>VARCHAR</datatype>
+<default>NULL</default></row>
+<row name="content" null="1" autoincrement="0">
+<datatype>VARCHAR</datatype>
+<default>NULL</default></row>
+<row name="type" null="1" autoincrement="0">
+<datatype>VARCHAR</datatype>
+<default>NULL</default></row>
+<row name="agency" null="1" autoincrement="0">
+<datatype>VARCHAR</datatype>
+<default>NULL</default></row>
+<row name="price_id" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default><relation table="prices" row="id" />
+</row>
+<row name="floor_area_id" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default><relation table="floor_areas" row="id" />
+</row>
+<row name="rooms" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="bathrooms" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="parking" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="city" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="city_area" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="region" null="1" autoincrement="0">
+<datatype>VARCHAR</datatype>
+<default>NULL</default></row>
+<row name="longitude" null="1" autoincrement="0">
+<datatype>VARCHAR</datatype>
+<default>NULL</default></row>
+<row name="latitude" null="1" autoincrement="0">
+<datatype>VARCHAR</datatype>
+<default>NULL</default></row>
+<row name="address" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="photo_id" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default><relation table="photos" row="id" />
+</row>
+<row name="eb_id" null="1" autoincrement="0">
+<datatype>VARCHAR</datatype>
+<default>NULL</default></row>
+<row name="eb_date" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="eb_time" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="floor_number" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="eb_year" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="is_new" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="plot_area_id" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<key type="PRIMARY" name="">
+<part>id</part>
+</key>
+</table>
+<table x="309" y="166" name="prices">
+<row name="id" null="1" autoincrement="1">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="currency" null="1" autoincrement="0">
+<datatype>VARCHAR</datatype>
+<default>NULL</default></row>
+<row name="amount" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<key type="PRIMARY" name="">
+<part>id</part>
+</key>
+</table>
+<table x="311" y="329" name="floor_areas">
+<row name="id" null="1" autoincrement="1">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="unit" null="1" autoincrement="0">
+<datatype>VARCHAR</datatype>
+<default>NULL</default></row>
+<key type="PRIMARY" name="">
+<part>id</part>
+</key>
+</table>
+<table x="316" y="519" name="photos">
+<row name="id" null="1" autoincrement="1">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<key type="PRIMARY" name="">
+<part>id</part>
+</key>
+</table>
+</sql>
+_�<?xml version="1.0" encoding="utf-8" ?>
+<!-- SQL XML created by WWW SQL Designer, https://github.com/ondras/wwwsqldesigner/ -->
+<!-- Active URL: https://kitt.lewagon.com/db/672 -->
+<sql>
+<datatypes db="postgresql">
+  <group label="Numeric" color="rgb(238,238,170)">
+    <type label="Integer" length="0" sql="INTEGER" re="INT" quote=""/>
+    <type label="Small Integer" length="0" sql="SMALLINT" quote=""/>
+    <type label="Big Integer" length="0" sql="BIGINT" quote=""/>
+    <type label="Decimal" length="1" sql="DECIMAL" re="numeric" quote=""/>
+    <type label="Serial" length="0" sql="SERIAL" re="SERIAL4" fk="Integer" quote=""/>
+    <type label="Big Serial" length="0" sql="BIGSERIAL" re="SERIAL8" fk="Big Integer" quote=""/>
+    <type label="Real" length="0" sql="BIGINT" quote=""/>
+    <type label="Single precision" length="0" sql="FLOAT" quote=""/>
+    <type label="Double precision" length="0" sql="DOUBLE" re="DOUBLE" quote=""/>
+  </group>
+
+  <group label="Character" color="rgb(255,200,200)">
+    <type label="Char" length="1" sql="CHAR" quote="'"/>
+    <type label="Varchar" length="1" sql="VARCHAR" re="CHARACTER VARYING" quote="'"/>
+    <type label="Text" length="0" sql="TEXT" quote="'"/>
+    <type label="Binary" length="1" sql="BYTEA" quote="'"/>
+    <type label="Boolean" length="0" sql="BOOLEAN" quote="'"/>
+  </group>
+
+  <group label="Date &amp; Time" color="rgb(200,255,200)">
+    <type label="Date" length="0" sql="DATE" quote="'"/>
+    <type label="Time" length="1" sql="TIME" quote="'"/>
+    <type label="Time w/ TZ" length="0" sql="TIME WITH TIME ZONE" quote="'"/>
+    <type label="Interval" length="1" sql="INTERVAL" quote="'"/>
+    <type label="Timestamp" length="1" sql="TIMESTAMP" quote="'"/>
+    <type label="Timestamp w/ TZ" length="0" sql="TIMESTAMP WITH TIME ZONE" quote="'"/>
+    <type label="Timestamp wo/ TZ" length="0" sql="TIMESTAMP WITHOUT TIME ZONE" quote="'"/>
+  </group>
+
+  <group label="Miscellaneous" color="rgb(200,200,255)">
+    <type label="XML" length="1" sql="XML" quote="'"/>
+    <type label="Bit" length="1" sql="BIT" quote="'"/>
+    <type label="Bit Varying" length="1" sql="VARBIT" re="BIT VARYING" quote="'"/>
+    <type label="Inet Host Addr" length="0" sql="INET" quote="'"/>
+    <type label="Inet CIDR Addr" length="0" sql="CIDR" quote="'"/>
+    <type label="Geometry" length="0" sql="GEOMETRY" quote="'"/>
+  </group>
+</datatypes><table x="51" y="106" name="properties">
+<row name="id" null="1" autoincrement="1">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="property_type" null="1" autoincrement="0">
+<datatype>VARCHAR</datatype>
+<default>NULL</default></row>
+<row name="url" null="1" autoincrement="0">
+<datatype>VARCHAR</datatype>
+<default>NULL</default></row>
+<row name="title" null="1" autoincrement="0">
+<datatype>VARCHAR</datatype>
+<default>NULL</default></row>
+<row name="content" null="1" autoincrement="0">
+<datatype>VARCHAR</datatype>
+<default>NULL</default></row>
+<row name="type" null="1" autoincrement="0">
+<datatype>VARCHAR</datatype>
+<default>NULL</default></row>
+<row name="agency" null="1" autoincrement="0">
+<datatype>VARCHAR</datatype>
+<default>NULL</default></row>
+<row name="price_id" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default><relation table="prices" row="id" />
+</row>
+<row name="floor_area_id" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default><relation table="floor_areas" row="id" />
+</row>
+<row name="rooms" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="bathrooms" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="parking" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="city" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="city_area" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="region" null="1" autoincrement="0">
+<datatype>VARCHAR</datatype>
+<default>NULL</default></row>
+<row name="longitude" null="1" autoincrement="0">
+<datatype>VARCHAR</datatype>
+<default>NULL</default></row>
+<row name="latitude" null="1" autoincrement="0">
+<datatype>VARCHAR</datatype>
+<default>NULL</default></row>
+<row name="address" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="photo_id" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default><relation table="photos" row="id" />
+</row>
+<row name="eb_id" null="1" autoincrement="0">
+<datatype>VARCHAR</datatype>
+<default>NULL</default></row>
+<row name="eb_date" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="eb_time" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="floor_number" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="eb_year" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="is_new" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="plot_area_id" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<key type="PRIMARY" name="">
+<part>id</part>
+</key>
+</table>
+<table x="309" y="166" name="prices">
+<row name="id" null="1" autoincrement="1">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="currency" null="1" autoincrement="0">
+<datatype>VARCHAR</datatype>
+<default>NULL</default></row>
+<row name="amount" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<key type="PRIMARY" name="">
+<part>id</part>
+</key>
+</table>
+<table x="311" y="329" name="floor_areas">
+<row name="id" null="1" autoincrement="1">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="unit" null="1" autoincrement="0">
+<datatype>VARCHAR</datatype>
+<default>NULL</default></row>
+<key type="PRIMARY" name="">
+<part>id</part>
+</key>
+</table>
+<table x="316" y="519" name="photos">
+<row name="id" null="1" autoincrement="1">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<key type="PRIMARY" name="">
+<part>id</part>
+</key>
+</table>
+</sql>
+O1j< ? x m l   v e r s i o n = " 1 . 0 "   e n c o d i n g = " u t f - 8 "   ? > 
+ < ! - -   S Q L   X M L   c r e a t e d   b y   W W W   S Q L   D e s i g n e r ,   h t t p s : / / g i t h u b . c o m / o n d r a s / w w w s q l d e s i g n e r /   - - > 
+ < ! - -   A c t i v e   U R L :   h t t p s : / / k i t t . l e w a g o n . c o m / d b / 6 7 2   - - > 
+ < s q l > 
+ < d a t a t y p e s   d b = " p o s t g r e s q l " > 
+     < g r o u p   l a b e l = " N u m e r i c "   c o l o r = " r g b ( 2 3 8 , 2 3 8 , 1 7 0 ) " > 
+         < t y p e   l a b e l = " I n t e g e r "   l e n g t h = " 0 "   s q l = " I N T E G E R "   r e = " I N T "   q u o t e = " " / > 
+         < t y p e   l a b e l = " S m a l l   I n t e g e r "   l e n g t h = " 0 "   s q l = " S M A L L I N T "   q u o t e = " " / > 
+         < t y p e   l a b e l = " B i g   I n t e g e r "   l e n g t h = " 0 "   s q l = " B I G I N T "   q u o t e = " " / > 
+         < t y p e   l a b e l = " D e c i m a l "   l e n g t h = " 1 "   s q l = " D E C I M A L "   r e = " n u m e r i c "   q u o t e = " " / > 
+         < t y p e   l a b e l = " S e r i a l "   l e n g t h = " 0 "   s q l = " S E R I A L "   r e = " S E R I A L 4 "   f k = " I n t e g e r "   q u o t e = " " / > 
+         < t y p e   l a b e l = " B i g   S e r i a l "   l e n g t h = " 0 "   s q l = " B I G S E R I A L "   r e = " S E R I A L 8 "   f k = " B i g   I n t e g e r "   q u o t e = " " / > 
+         < t y p e   l a b e l = " R e a l "   l e n g t h = " 0 "   s q l = " B I G I N T "   q u o t e = " " / > 
+         < t y p e   l a b e l = " S i n g l e   p r e c i s i o n "   l e n g t h = " 0 "   s q l = " F L O A T "   q u o t e = " " / > 
+         < t y p e   l a b e l = " D o u b l e   p r e c i s i o n "   l e n g t h = " 0 "   s q l = " D O U B L E "   r e = " D O U B L E "   q u o t e = " " / > 
+     < / g r o u p > 
+ 
+     < g r o u p   l a b e l = " C h a r a c t e r "   c o l o r = " r g b ( 2 5 5 , 2 0 0 , 2 0 0 ) " > 
+         < t y p e   l a b e l = " C h a r "   l e n g t h = " 1 "   s q l = " C H A R "   q u o t e = " ' " / > 
+         < t y p e   l a b e l = " V a r c h a r "   l e n g t h = " 1 "   s q l = " V A R C H A R "   r e = " C H A R A C T E R   V A R Y I N G "   q u o t e = " ' " / > 
+         < t y p e   l a b e l = " T e x t "   l e n g t h = " 0 "   s q l = " T E X T "   q u o t e = " ' " / > 
+         < t y p e   l a b e l = " B i n a r y "   l e n g t h = " 1 "   s q l = " B Y T E A "   q u o t e = " ' " / > 
+         < t y p e   l a b e l = " B o o l e a n "   l e n g t h = " 0 "   s q l = " B O O L E A N "   q u o t e = " ' " / > 
+     < / g r o u p > 
+ 
+     < g r o u p   l a b e l = " D a t e   & a m p ;   T i m e "   c o l o r = " r g b ( 2 0 0 , 2 5 5 , 2 0 0 ) " > 
+         < t y p e   l a b e l = " D a t e "   l e n g t h = " 0 "   s q l = " D A T E "   q u o t e = " ' " / > 
+         < t y p e   l a b e l = " T i m e "   l e n g t h = " 1 "   s q l = " T I M E "   q u o t e = " ' " / > 
+         < t y p e   l a b e l = " T i m e   w /   T Z "   l e n g t h = " 0 "   s q l = " T I M E   W I T H   T I M E   Z O N E "   q u o t e = " ' " / > 
+         < t y p e   l a b e l = " I n t e r v a l "   l e n g t h = " 1 "   s q l = " I N T E R V A L "   q u o t e = " ' " / > 
+         < t y p e   l a b e l = " T i m e s t a m p "   l e n g t h = " 1 "   s q l = " T I M E S T A M P "   q u o t e = " ' " / > 
+         < t y p e   l a b e l = " T i m e s t a m p   w /   T Z "   l e n g t h = " 0 "   s q l = " T I M E S T A M P   W I T H   T I M E   Z O N E "   q u o t e = " ' " / > 
+         < t y p e   l a b e l = " T i m e s t a m p   w o /   T Z "   l e n g t h = " 0 "   s q l = " T I M E S T A M P   W I T H O U T   T I M E   Z O N E "   q u o t e = " ' " / > 
+     < / g r o u p > 
+ 
+     < g r o u p   l a b e l = " M i s c e l l a n e o u s "   c o l o r = " r g b ( 2 0 0 , 2 0 0 , 2 5 5 ) " > 
+         < t y p e   l a b e l = " X M L "   l e n g t h = " 1 "   s q l = " X M L "   q u o t e = " ' " / > 
+         < t y p e   l a b e l = " B i t "   l e n g t h = " 1 "   s q l = " B I T "   q u o t e = " ' " / > 
+         < t y p e   l a b e l = " B i t   V a r y i n g "   l e n g t h = " 1 "   s q l = " V A R B I T "   r e = " B I T   V A R Y I N G "   q u o t e = " ' " / > 
+         < t y p e   l a b e l = " I n e t   H o s t   A d d r "   l e n g t h = " 0 "   s q l = " I N E T "   q u o t e = " ' " / > 
+         < t y p e   l a b e l = " I n e t   C I D R   A d d r "   l e n g t h = " 0 "   s q l = " C I D R "   q u o t e = " ' " / > 
+         < t y p e   l a b e l = " G e o m e t r y "   l e n g t h = " 0 "   s q l = " G E O M E T R Y "   q u o t e = " ' " / > 
+     < / g r o u p > 
+ < / d a t a t y p e s > < t a b l e   x = " 5 1 "   y = " 1 0 6 "   n a m e = " p r o p e r t i e s " > 
+ < r o w   n a m e = " i d "   n u l l = " 1 "   a u t o i n c r e m e n t = " 1 " > 
+ < d a t a t y p e > I N T E G E R < / d a t a t y p e > 
+ < d e f a u l t > N U L L < / d e f a u l t > < / r o w > 
+ < r o w   n a m e = " p r o p e r t y _ t y p e "   n u l l = " 1 "   a u t o i n c r e m e n t = " 0 " > 
+ < d a t a t y p e > V A R C H A R < / d a t a t y p e > 
+ < d e f a u l t > N U L L < / d e f a u l t > < / r o w > 
+ < r o w   n a m e = " u r l "   n u l l = " 1 "   a u t o i n c r e m e n t = " 0 " > 
+ < d a t a t y p e > V A R C H A R < / d a t a t y p e > 
+ < d e f a u l t > N U L L < / d e f a u l t > < / r o w > 
+ < r o w   n a m e = " t i t l e "   n u l l = " 1 "   a u t o i n c r e m e n t = " 0 " > 
+ < d a t a t y p e > V A R C H A R < / d a t a t y p e > 
+ < d e f a u l t > N U L L < / d e f a u l t > < / r o w > 
+ < r o w   n a m e = " c o n t e n t "   n u l l = " 1 "   a u t o i n c r e m e n t = " 0 " > 
+ < d a t a t y p e > V A R C H A R < / d a t a t y p e > 
+ < d e f a u l t > N U L L < / d e f a u l t > < / r o w > 
+ < r o w   n a m e = " t y p e "   n u l l = " 1 "   a u t o i n c r e m e n t = " 0 " > 
+ < d a t a t y p e > V A R C H A R < / d a t a t y p e > 
+ < d e f a u l t > N U L L < / d e f a u l t > < / r o w > 
+ < r o w   n a m e = " a g e n c y "   n u l l = " 1 "   a u t o i n c r e m e n t = " 0 " > 
+ < d a t a t y p e > V A R C H A R < / d a t a t y p e > 
+ < d e f a u l t > N U L L < / d e f a u l t > < / r o w > 
+ < r o w   n a m e = " p r i c e _ i d "   n u l l = " 1 "   a u t o i n c r e m e n t = " 0 " > 
+ < d a t a t y p e > I N T E G E R < / d a t a t y p e > 
+ < d e f a u l t > N U L L < / d e f a u l t > < r e l a t i o n   t a b l e = " p r i c e s "   r o w = " i d "   / > 
+ < / r o w > 
+ < r o w   n a m e = " f l o o r _ a r e a _ i d "   n u l l = " 1 "   a u t o i n c r e m e n t = " 0 " > 
+ < d a t a t y p e > I N T E G E R < / d a t a t y p e > 
+ < d e f a u l t > N U L L < / d e f a u l t > < r e l a t i o n   t a b l e = " f l o o r _ a r e a s "   r o w = " i d "   / > 
+ < / r o w > 
+ < r o w   n a m e = " r o o m s "   n u l l = " 1 "   a u t o i n c r e m e n t = " 0 " > 
+ < d a t a t y p e > I N T E G E R < / d a t a t y p e > 
+ < d e f a u l t > N U L L < / d e f a u l t > < / r o w > 
+ < r o w   n a m e = " b a t h r o o m s "   n u l l = " 1 "   a u t o i n c r e m e n t = " 0 " > 
+ < d a t a t y p e > I N T E G E R < / d a t a t y p e > 
+ < d e f a u l t > N U L L < / d e f a u l t > < / r o w > 
+ < r o w   n a m e = " p a r k i n g "   n u l l = " 1 "   a u t o i n c r e m e n t = " 0 " > 
+ < d a t a t y p e > I N T E G E R < / d a t a t y p e > 
+ < d e f a u l t > N U L L < / d e f a u l t > < / r o w > 
+ < r o w   n a m e = " c i t y "   n u l l = " 1 "   a u t o i n c r e m e n t = " 0 " > 
+ < d a t a t y p e > I N T E G E R < / d a t a t y p e > 
+ < d e f a u l t > N U L L < / d e f a u l t > < / r o w > 
+ < r o w   n a m e = " c i t y _ a r e a "   n u l l = " 1 "   a u t o i n c r e m e n t = " 0 " > 
+ < d a t a t y p e > I N T E G E R < / d a t a t y p e > 
+ < d e f a u l t > N U L L < / d e f a u l t > < / r o w > 
+ < r o w   n a m e = " r e g i o n "   n u l l = " 1 "   a u t o i n c r e m e n t = " 0 " > 
+ < d a t a t y p e > V A R C H A R < / d a t a t y p e > 
+ < d e f a u l t > N U L L < / d e f a u l t > < / r o w > 
+ < r o w   n a m e = " l o n g i t u d e "   n u l l = " 1 "   a u t o i n c r e m e n t = " 0 " > 
+ < d a t a t y p e > V A R C H A R < / d a t a t y p e > 
+ < d e f a u l t > N U L L < / d e f a u l t > < / r o w > 
+ < r o w   n a m e = " l a t i t u d e "   n u l l = " 1 "   a u t o i n c r e m e n t = " 0 " > 
+ < d a t a t y p e > V A R C H A R < / d a t a t y p e > 
+ < d e f a u l t > N U L L < / d e f a u l t > < / r o w > 
+ < r o w   n a m e = " a d d r e s s "   n u l l = " 1 "   a u t o i n c r e m e n t = " 0 " > 
+ < d a t a t y p e > I N T E G E R < / d a t a t y p e > 
+ < d e f a u l t > N U L L < / d e f a u l t > < / r o w > 
+ < r o w   n a m e = " p h o t o _ i d "   n u l l = " 1 "   a u t o i n c r e m e n t = " 0 " > 
+ < d a t a t y p e > I N T E G E R < / d a t a t y p e > 
+ < d e f a u l t > N U L L < / d e f a u l t > < r e l a t i o n   t a b l e = " p h o t o s "   r o w = " i d "   / > 
+ < / r o w > 
+ < r o w   n a m e = " e b _ i d "   n u l l = " 1 "   a u t o i n c r e m e n t = " 0 " > 
+ < d a t a t y p e > V A R C H A R < / d a t a t y p e > 
+ < d e f a u l t > N U L L < / d e f a u l t > < / r o w > 
+ < r o w   n a m e = " e b _ d a t e "   n u l l = " 1 "   a u t o i n c r e m e n t = " 0 " > 
+ < d a t a t y p e > I N T E G E R < / d a t a t y p e > 
+ < d e f a u l t > N U L L < / d e f a u l t > < / r o w > 
+ < r o w   n a m e = " e b _ t i m e "   n u l l = " 1 "   a u t o i n c r e m e n t = " 0 " > 
+ < d a t a t y p e > I N T E G E R < / d a t a t y p e > 
+ < d e f a u l t > N U L L < / d e f a u l t > < / r o w > 
+ < r o w   n a m e = " f l o o r _ n u m b e r "   n u l l = " 1 "   a u t o i n c r e m e n t = " 0 " > 
+ < d a t a t y p e > I N T E G E R < / d a t a t y p e > 
+ < d e f a u l t > N U L L < / d e f a u l t > < / r o w > 
+ < r o w   n a m e = " e b _ y e a r "   n u l l = " 1 "   a u t o i n c r e m e n t = " 0 " > 
+ < d a t a t y p e > I N T E G E R < / d a t a t y p e > 
+ < d e f a u l t > N U L L < / d e f a u l t > < / r o w > 
+ < r o w   n a m e = " i s _ n e w "   n u l l = " 1 "   a u t o i n c r e m e n t = " 0 " > 
+ < d a t a t y p e > I N T E G E R < / d a t a t y p e > 
+ < d e f a u l t > N U L L < / d e f a u l t > < / r o w > 
+ < r o w   n a m e = " p l o t _ a r e a _ i d "   n u l l = " 1 "   a u t o i n c r e m e n t = " 0 " > 
+ < d a t a t y p e > I N T E G E R < / d a t a t y p e > 
+ < d e f a u l t > N U L L < / d e f a u l t > < / r o w > 
+ < k e y   t y p e = " P R I M A R Y "   n a m e = " " > 
+ < p a r t > i d < / p a r t > 
+ < / k e y > 
+ < / t a b l e > 
+ < t a b l e   x = " 3 0 9 "   y = " 1 6 6 "   n a m e = " p r i c e s " > 
+ < r o w   n a m e = " i d "   n u l l = " 1 "   a u t o i n c r e m e n t = " 1 " > 
+ < d a t a t y p e > I N T E G E R < / d a t a t y p e > 
+ < d e f a u l t > N U L L < / d e f a u l t > < / r o w > 
+ < r o w   n a m e = " c u r r e n c y "   n u l l = " 1 "   a u t o i n c r e m e n t = " 0 " > 
+ < d a t a t y p e > V A R C H A R < / d a t a t y p e > 
+ < d e f a u l t > N U L L < / d e f a u l t > < / r o w > 
+ < r o w   n a m e = " a m o u n t "   n u l l = " 1 "   a u t o i n c r e m e n t = " 0 " > 
+ < d a t a t y p e > I N T E G E R < / d a t a t y p e > 
+ < d e f a u l t > N U L L < / d e f a u l t > < / r o w > 
+ < k e y   t y p e = " P R I M A R Y "   n a m e = " " > 
+ < p a r t > i d < / p a r t > 
+ < / k e y > 
+ < / t a b l e > 
+ < t a b l e   x = " 3 1 1 "   y = " 3 2 9 "   n a m e = " f l o o r _ a r e a s " > 
+ < r o w   n a m e = " i d "   n u l l = " 1 "   a u t o i n c r e m e n t = " 1 " > 
+ < d a t a t y p e > I N T E G E R < / d a t a t y p e > 
+ < d e f a u l t > N U L L < / d e f a u l t > < / r o w > 
+ < r o w   n a m e = " u n i t "   n u l l = " 1 "   a u t o i n c r e m e n t = " 0 " > 
+ < d a t a t y p e > V A R C H A R < / d a t a t y p e > 
+ < d e f a u l t > N U L L < / d e f a u l t > < / r o w > 
+ < k e y   t y p e = " P R I M A R Y "   n a m e = " " > 
+ < p a r t > i d < / p a r t > 
+ < / k e y > 
+ < / t a b l e > 
+ < t a b l e   x = " 3 1 6 "   y = " 5 1 9 "   n a m e = " p h o t o s " > 
+ < r o w   n a m e = " i d "   n u l l = " 1 "   a u t o i n c r e m e n t = " 1 " > 
+ < d a t a t y p e > I N T E G E R < / d a t a t y p e > 
+ < d e f a u l t > N U L L < / d e f a u l t > < / r o w > 
+ < k e y   t y p e = " P R I M A R Y "   n a m e = " " > 
+ < p a r t > i d < / p a r t > 
+ < / k e y > 
+ < / t a b l e > 
+ < / s q l > 
+      B [ u.1�             	              cU

@@ -33,6 +33,8 @@ doc.xpath('//ad').each do |ad|
         end 
       end
     end
+    property.price =  ad.at('price').nil? ? nil : ad.at('price').content
+    property.currency = ad.at('price').nil? ? nil : ad.at('price').attribute('currency').content
     property.address = ad.at('address').nil? ? nil : ad.at('address').content
     property.agency = ad.at('agency').nil? ? nil : ad.at('agency').content
     property.bathrooms = ad.at('bathrooms').nil? ? nil : ad.at('bathrooms').content
@@ -65,6 +67,8 @@ doc.xpath('//ad').each do |ad|
       photo.remote_photo_url = url
       photo.save
     end
+    property.price =  ad.at('price').nil? ? nil : ad.at('price').content
+    property.currency = ad.at('price').nil? ? nil : ad.at('price').attribute('currency').content
     property.address = ad.at('address').nil? ? nil : ad.at('address').content
     property.agency = ad.at('agency').nil? ? nil : ad.at('agency').content
     property.bathrooms = ad.at('bathrooms').nil? ? nil : ad.at('bathrooms').content

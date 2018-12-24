@@ -1,6 +1,9 @@
 class PropertiesController < ApplicationController
   def index
-    # @properties = Property.all
-    @properties = Property.where(published: true).order(:id).page params[:page]
+    if params[:query].present?
+      @properties = Property.where("eb_type ILIKE ?", "%#{params[:query]}%").order(:id).page params[:page]
+    else
+      @properties = Property.where(published: true).order(:id).page params[:page]
+    end
   end
 end

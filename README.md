@@ -16,7 +16,7 @@ Test project for easybroker interview process - will update as project evolves
 
 ## TO DO's 
 
-* [ ] - Make the script run as a cronjob using sidekiq
+* [X] - Make the script run as a cronjob using sidekiq
 * [ ] - Make the photos work with carrierwave and cloudinary
 * [ ] - Filter the index by rented, sold or short rentals
 * [ ] - add a show page with all the useful attributes for users to see

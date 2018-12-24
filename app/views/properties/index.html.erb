@@ -2,9 +2,10 @@
   <h1>All of our properties</h1>
 </div>
 <div class="row">
+
     <% @properties.each do |property| %>
       <div class="col-sm-12 col-md-12">
-        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/shanghai');">
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path(property.photos.first.photo) %>');">
           <div class="card-category">
             Popular
           </div>

@@ -11,6 +11,28 @@ end
 doc.xpath('//ad').each do |ad|
   if Property.find_by('eb_id = ?', ad.at('id').content).nil?
     property = Property.new
+    # saving the photos to cloudinary using carrierwave
+    if ad.at('pictures').nil?
+      p "This property doesn't have pictures"
+    else
+      ad.at('pictures').children.each do |picture|
+        url = picture.content
+        p "Checking url validity..."
+        begin 
+          test = open(url)
+        rescue OpenURI::HTTPError => e
+          p e
+        end
+        if test.nil?
+          next
+        else
+          p "Saving valid url photo..."
+          photo = property.photos.new
+          photo.remote_photo_url = url
+          photo.save
+        end 
+      end
+    end
     property.address = ad.at('address').nil? ? nil : ad.at('address').content
     property.agency = ad.at('agency').nil? ? nil : ad.at('agency').content
     property.bathrooms = ad.at('bathrooms').nil? ? nil : ad.at('bathrooms').content
@@ -37,6 +59,12 @@ doc.xpath('//ad').each do |ad|
     property.save
   else
     property = Property.find_by("eb_id = ?", ad.at('id').content)
+    ad.at('pictures').children.each do |picture|
+      url = picture.content
+      photo = property.photos.new
+      photo.remote_photo_url = url
+      photo.save
+    end
     property.address = ad.at('address').nil? ? nil : ad.at('address').content
     property.agency = ad.at('agency').nil? ? nil : ad.at('agency').content
     property.bathrooms = ad.at('bathrooms').nil? ? nil : ad.at('bathrooms').content

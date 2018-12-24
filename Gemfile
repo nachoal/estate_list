@@ -71,3 +71,4 @@ gem 'kaminari'
 gem 'sidekiq'
 gem 'sidekiq-failures'
 gem 'devise'
+gem 'dotenv-rails', groups: [:development, :test]
